@@ -16,6 +16,8 @@ Demonstration of using ProxySQL to access MariaDB in Zerops.
 
 * The ProxySQL configuration is created through `zerops.yml` build pipe YAML and the `proxysql-cnf.sh` script.
 
+* The included simple Node.js application has no direct relation to the described ProxySQL solution.
+
 * You have to fill in a new password for admin access to the ProxySQL server before you run the import script. See the environment variable **PROXYSQL_PASSWORD** in the import script below. This manual step won't be necessary with a new Zerops feature called `Import Script Functions` that will be released in several next days.
 
 ## Zerops import script to instantiate the demonstration
