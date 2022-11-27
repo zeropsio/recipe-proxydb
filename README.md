@@ -4,9 +4,9 @@ Demonstration of using ProxySQL to access MariaDB in Zerops.
 
 ## Basic facts
 
-* ProxyDB is set to require SSL connections only.
+* ProxySQL is set to require SSL connections only.
 
-* To access ProxyDB from outside the Internet, it's necessary to set the public access through IPv4 or IPv6 addresses for the `proxysql:6033` port. See the example below.
+* To access ProxySQL from outside the Internet, it's necessary to set the public access through IPv4 or IPv6 addresses for the `proxysql:6033` port. See the example below.
 
 ![ProxySQL](./docs/Public-Access-Through-IP-Addresses.png "Public access through IP addresses")
 
