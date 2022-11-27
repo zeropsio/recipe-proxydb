@@ -10,7 +10,7 @@ Demonstration of using ProxySQL to access MariaDB in Zerops.
 
 ![ProxySQL](./docs/Public-Access-Through-IP-Addresses.png "Public access through IP addresses")
 
-* To access the MariaDB database form Google DataStudio fill in the connection form. Because of the SSL connection, you have to attach `proxy-ca.pem` certificate from the ProxySQL instance. You can find it in the ProxySQL data directory `/var/lib/proxysql/`.
+* To access the MariaDB database from Google DataStudio fill in the connection form. Because of the SSL connection, you have to attach `proxy-ca.pem` certificate from the ProxySQL instance. You can find it in the ProxySQL data directory `/var/lib/proxysql/`.
 
 ![Google DataStudio](./docs/Google-DataStudio-MySQL-DataSource.png "MySQL data source")
 
