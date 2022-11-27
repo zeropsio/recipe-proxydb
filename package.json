@@ -1,0 +1,16 @@
+{
+	"name": "zerops-proxysql",
+	"version": "0.0.1",
+	"scripts": {
+		"start": "npm run dev",
+		"dev": "node ./app/index.js"
+	},
+	"private": false,
+	"dependencies": {
+		"express": "4.18.2"
+	},
+	"devDependencies": {
+		"@types/express": "4.17.14",
+		"@types/node": "18.11.9"
+	}
+}

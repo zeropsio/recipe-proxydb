@@ -1,0 +1,39 @@
+proxysql:
+  build:
+    base: 
+      - nodejs@16
+    build:
+      - npm i
+    cache:
+      - node_modules
+    deploy:
+      - package.json
+      - node_modules
+      - ./app/index.js
+      - proxysql-cnf.sh
+  run:
+    prepare:
+      - |
+        apt-get update
+        apt-get install -y mysql-client
+    init:
+      - |
+        if [[ ! ( -f "/etc/proxysql.cnf" ) ]]; then
+          chmod +x proxysql-cnf.sh
+          ./proxysql-cnf.sh
+          mkdir install
+          cd install
+          curl -OL https://github.com/sysown/proxysql/releases/download/v2.4.3/proxysql_2.4.3-ubuntu22_amd64.deb
+          dpkg --force-confold -i proxysql_2.4.3-ubuntu22_amd64.deb
+          proxysql --version
+          cd ..
+          rm -r install
+        fi
+      - service proxysql start
+    start: yarn start
+
+    # Administrator's connect to the ProxySQL server.
+    # mysql -u admin -padmin -h 127.0.0.1 -P6032 --prompt='Admin> '
+
+    # Checking of available secure connections on the ProxySQL server with enabled SSL.
+    # mysql -u admin -padmin -h 127.0.0.1 -P6032 -e '\s' | grep -P 'SSL|Connection'
